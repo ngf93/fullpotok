@@ -1,0 +1,367 @@
+// @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+:root {
+    --h-height: 100px;
+    --f-height: 100px;
+    --font-size: 18px;
+    --bg-color: #fff;
+    --main-color: #DA9938;
+    --accent-color: #d9880e;
+    --primary-1: #7f5bfd;
+    --primary-2: #623aea;
+    --primary-3: #4c2cbb;
+    --secondary-1: #fd4ec5;
+    --secondary-2: #e22fa9;
+    --secondary-3: #991a6f;
+    --font-color: #313131;
+    --gray: #868686;
+    --main-font: 'SF Pro Display';
+    --transition: 250ms ease-in;
+    --radius: 10px;
+
+    --bs-btn-active-bg: #D9D9D9;
+    --bs-btn-active-border-color: #D9D9D9;
+    --bs-border-radius: 2em;
+    --bs-border-color: #D9D9D9;
+
+    @media (max-width: 767px) {
+        --font-size: 14px;
+    }
+    @media (max-width: 575px) {
+        --font-size: 12px;
+        --f-height: 50px;
+    }
+}
+
+/* mixins */
+@mixin flex($dir: row, $x: center, $y: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $x;
+    align-items: $y;
+    flex-wrap: $wrap;
+}
+@mixin safariFix {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    isolation: isolate;
+    transform: translateZ(0);
+}
+@mixin list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, label, span, a, button, form, fieldset, legend, select, input, textarea, button, div, blockquote, cite, figure, figcaption, table, ul, ol, dl, li, address {
+    line-height: 140%;
+    margin-bottom: 0px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    transition: color var(--transition);
+    &:hover, &:focus, &:active {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+.h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    line-height: 150%;
+    span {
+        background-color: #343434;
+        padding: 5px 20px;
+        border-radius: 5px;
+    }
+}
+
+.flex-1 {flex:1;}
+
+button {
+    background: none;
+    border: none;
+    padding: unset;
+    display: block;
+    font-family: inherit;
+    color: inherit;
+    outline: none !important;
+    cursor: pointer;
+}
+.btn {
+    @include flex(row, center, center, nowrap);
+    text-align: center;
+    width: fit-content;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: .875em;
+    padding: 1.2em 2.5em;
+    border: none;
+    &-primary {
+        @extend .btn;
+        color: var(--bg-color);
+        background-image: linear-gradient(to bottom, var(--primary-1), var(--primary-2) 40%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0px 1px 0px 1px var(--primary-3);
+    }
+    &-secondary {
+        @extend .btn;
+        color: var(--bg-color);
+        background-image: linear-gradient(to bottom, var(--secondary-1), var(--secondary-2) 40%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0px 1px 0px 1px var(--secondary-3);
+    }
+    &:disabled, &.disabled {
+        pointer-events: none;
+        background-color: #F0F0F0 !important;
+        color: #7D7D7D !important;
+    }
+}
+
+.fs {
+    &-075 {font-size: 0.75em;}
+    &-08 {font-size: 0.8em;}
+    &-09 {font-size: 0.9em;}
+    &-10 {font-size: 1em;}
+    &-11 {font-size: 1.1em;}
+    &-115 {font-size: 1.15em;}
+    &-12 {font-size: 1.2em;}
+    &-13 {font-size: 1.3em;}
+    &-14 {font-size: 1.4em;}
+    &-15 {font-size: 1.5em;}
+    &-16 {font-size: 1.6em;}
+    &-17 {font-size: 1.7em;}
+    &-18 {font-size: 1.8em;}
+    &-19 {font-size: 1.9em;}
+    &-20 {font-size: 2em;}
+    &-25 {font-size: 2.5em;}
+}
+.gray {color: var(--gray);}
+
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1140px;
+    }
+}
+
+
+body {
+    background-color: var(--bg-color);
+    font-size: var(--font-size);
+    font-family: var(--main-font), Arial, sans-serif;
+    position: relative;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 100;
+    height: var(--h-height);
+    color: var(--bg-color);
+    nav {
+        @include flex(row, space-between, center, nowrap);
+        .logo {
+            @include flex(row, flex-start, center, nowrap);
+            font-size: .88em;
+            svg {
+                width: 60px;
+                height: 60px;
+            }
+            span {
+                color: var(--gray);
+            }
+        }
+        ul {
+            @include list();
+            @include flex(row, flex-start, center, nowrap);
+            &.menu {
+                li {
+                    &:not(:first-child) {
+                        margin-left: 2em;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.sec-1 {
+    position: relative;
+    z-index: 1;
+    background: url(../imgs/bg/Desktop.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+    color: var(--bg-color);
+    @include flex(column, center, stretch, nowrap);
+    text-align: center;
+}
+
+.sec-3 {
+    background: url(../imgs/bg/Desktop2.jpg) no-repeat center;
+    background-size: cover;
+    color: var(--bg-color);
+    padding: 4em 0em 5em;
+}
+
+.icon-box {
+    background-image: linear-gradient(to bottom, var(--secondary-1), var(--secondary-2) 40%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    @include flex();
+    border-radius: 5px;
+    svg {
+        width: 50%;
+    }
+}
+
+.sec-4 {
+    background-color: #f8f8f8;
+}
+.offer {
+    width: 100%;
+    border-radius: 1em;
+    overflow: hidden;
+    @include safariFix();
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    &_info {
+        position: absolute;
+        z-index: 10;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 50%;
+        padding: 1em;
+    }
+}
+
+
+.swiperMain {
+    .swiper-slide {
+        padding: 0em 5em;
+    }
+    .swiper-btn-prev {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        z-index: 10;
+        width: 60px;
+        transform: translateY(-50%);
+        img {
+            width: 100%;
+        }
+    }
+    .swiper-btn-next {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        z-index: 10;
+        width: 60px;
+        transform: translateY(-50%);
+        img {
+            width: 100%;
+        }
+    }
+    .swiper-pagination {
+        left: 51%;
+        width: 50%;
+        text-align: left;
+        &-bullet {
+            background-color: var(--secondary-1);
+            opacity: .3;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            &-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.swiperMini {
+    position: relative;
+    .swiper-slide {
+        padding: 0em !important;
+        img {
+            width: 100%;
+            border-radius: var(--radius);
+        }
+    }
+    .swiper-button-prev, .swiper-button-next {
+        background-color: var(--secondary-1);
+        width: 30px;
+        height: 30px;
+        @include flex();
+        border-radius: 50%;
+        &::after {
+            font-size: .8em;
+            line-height: .8em;
+            color: var(--bg-color);
+        }
+    }
+}
+
+
+.sec-8 {
+    color: var(--bg-color);
+    background: url(../imgs/bg/Desktop3.jpg) no-repeat center;
+    background-size: cover;
+    padding: 5em 0em 8em;
+    ol {
+        counter-reset: my-awesome-counter;
+        li {
+            counter-increment: my-awesome-counter;
+            @include flex(row, flex-start, flex-start, nowrap);
+            &::before {
+                content: "0" counter(my-awesome-counter);
+                width: 40px;
+                height: 40px;
+                border-radius: 4px;
+                background-image: linear-gradient(to bottom, var(--secondary-1), var(--secondary-2) 40%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-weight: 600;
+                font-size: 1.4em;
+                line-height: 1;
+                margin-right: 1em;
+                @include flex();
+            }
+        }
+    }
+}
+
+.sec-9 {
+    background-color: #f8f8f8;
+}
+
+
+footer {
+    height: var(--f-height);
+    border-top: 1px solid rgba($color: #000000, $alpha: .2);
+    .logo {
+        @include flex(row, flex-start, center, nowrap);
+        font-size: .88em;
+        color: var(--gray);
+        svg {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
