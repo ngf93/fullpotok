@@ -25,12 +25,20 @@
                     <div class="ms-3"><strong>Fullpotok.ru</strong> <span>- фулфилмент
                         <br/>сервис для маркетплейсов</span></div>
                 </div>
-                <ul class="menu">
-                    <li><a href="#price">Цены и услуги</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                    <li><a href="">Заказать звонок</a></li>
-                </ul>
-                <ul class="contacts">
+                <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasMenu">
+                    <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"></path></svg>
+                    </button>
+                    <div class="offcanvas-body">
+                        <ul class="menu">
+                            <li><a href="#price">Цены и услуги</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                            <li><a href="#callback">Заказать звонок</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <ul class="contacts d-none d-lg-flex">
                     <li>
                         <a href="https://api.whatsapp.com/send?phone=79119717604">
                             <img src="imgs/icons/wapp.png" alt="whatsapp">
@@ -46,6 +54,10 @@
                         <a href="tel:+74993255036" class="fs-11 fw-bold">+7 (499) 325-50-36</a>
                     </li>
                 </ul>
+
+                <button type="button" class="d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"></path></svg>
+                </button>
             </nav>
         </div> 
     </header>
@@ -54,20 +66,20 @@
         <div class="container d-flex flex-column justify-content-center">
             <p class="h1">Упаковка, хранение и доставка <br/>товаров до <span>Маркетплейса</span></p>
             <p class="fs-14 mb-5">Минимальный заказ – 5 000 единиц</p>
-            <ul class="list-unstyled d-flex justify-content-center mb-5">
+            <ul class="list-unstyled d-flex justify-content-center flex-wrap flex-md-nowrap mb-5">
                 <li>
-                    <img src="imgs/avito2.png" alt="avito">
+                    <img src="imgs/avito2.png" alt="avito" class="img-fluid">
                 </li>
                 <li class="ms-4">
-                    <img src="imgs/ya.png" alt="яндекс">
+                    <img src="imgs/ya.png" alt="яндекс" class="img-fluid">
                 </li>
-                <li class="ms-4">
-                    <img src="imgs/2gis.png" alt="2gis">
+                <li class="mt-4 mt-md-0 ms-md-4">
+                    <img src="imgs/2gis.png" alt="2gis" class="img-fluid">
                 </li>
             </ul>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
                 <button type="button" class="btn btn-secondary fs-11">-15% на первый заказ</button>
-                <button type="button" class="btn btn-primary fs-11 ms-5">Прайс</button>
+                <button type="button" class="btn btn-primary fs-11 mt-4 mt-sm-0 ms-sm-4 ms-lg-5">Прайс</button>
             </div>
         </div>
     </section>
@@ -75,49 +87,49 @@
     <section class="container mb-5">
         <p class="fs-18 fw-bold text-center text-uppercase mb-4">наши преимущества</p>
         <div class="row row-cols-lg-3">
-            <div class="d-flex flex-column justify-content-between py-5">
-                <div class="d-flex flex-row-reverse align-items-start text-end">
+            <div class="d-flex flex-column justify-content-between py-lg-5">
+                <div class="d-flex flex-lg-row-reverse align-items-start text-lg-end mb-3">
                     <img src="imgs/icons/box.png" alt="склад">
-                    <div class="flex-1 me-3">
+                    <div class="flex-1 me-lg-3 ms-3">
                         <p class="fs-12">Большой склад 1000м2</p>
                         <p class="gray">Современное складское помещение на юге Москвы. В 10 минутах от Южных ворот и ТЯК</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row-reverse align-items-start text-end">
+                <div class="d-flex flex-lg-row-reverse align-items-start text-lg-end mb-3">
                     <img src="imgs/icons/shield.png" alt="хранение">
-                    <div class="flex-1 me-3">
+                    <div class="flex-1 me-lg-3 ms-3">
                         <p class="fs-12">Бесплатное хранение</p>
                         <p class="gray">До 1 месяца хранение бесплатно, при условие обработки товаров на нашем фулфилменте</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row-reverse align-items-start text-end">
+                <div class="d-flex flex-lg-row-reverse align-items-start text-lg-end mb-3">
                     <img src="imgs/icons/clock.png" alt="логистика">
-                    <div class="flex-1 me-3">
+                    <div class="flex-1 me-lg-3 ms-3">
                         <p class="fs-12">Дешевая логистика</p>
                         <p class="gray">Коледино 1500 рублей паллет. Тула 2000 рублей паллет.
                             Казань 4000 рублей паллет и т.д.</p>
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="d-none d-lg-block">
                 <img src="imgs/smartphone.png" alt="smartphone" class="img-fluid d-block mx-auto">
             </div>
-            <div class="d-flex flex-column justify-content-between py-5">
-                <div class="d-flex flex-row align-items-start">
+            <div class="d-flex flex-column justify-content-between py-lg-5">
+                <div class="d-flex flex-row align-items-start mb-3">
                     <img src="imgs/icons/cart.png" alt="коммуникация">
                     <div class="flex-1 ms-3">
                         <p class="fs-12">Понятная коммуникация</p>
                         <p class="gray">Вам будет предоставлен личный менеджер + будут созданы чаты для быстрой коммуникации</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row align-items-start">
+                <div class="d-flex flex-row align-items-start mb-3">
                     <img src="imgs/icons/clients.png" alt="скорость">
                     <div class="flex-1 ms-3">
                         <p class="fs-12">Быстрая скорость</p>
                         <p class="gray">Мы можем обрабатывать от 2000 единиц товара в сутки</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row align-items-start">
+                <div class="d-flex flex-row align-items-start mb-3">
                     <img src="imgs/icons/photo.png" alt="Видеокамеры">
                     <div class="flex-1 ms-3">
                         <p class="fs-12">Видеокамеры</p>
@@ -130,11 +142,11 @@
 
     <section class="sec-3">
         <div class="container">
-            <p class="fs-18 fw-bold text-center text-uppercase mb-4">FULLPOTOK В ЦИФРАХ:</p>
+            <p class="fs-18 fw-8 text-center text-uppercase mb-4">FULLPOTOK В ЦИФРАХ:</p>
             <p class="text-center fs-13 mb-5">Развивайте свой бизнес, а самое сложное оставьте нам!
             <br/>Работаем по FBS и FBO!</p>
 
-            <div class="row row-cols-4 text-center">
+            <div class="row row-cols-2 row-cols-lg-4 text-center g-4">
                 <div>
                     <div class="icon-box mx-auto mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14" fill="none"> 
@@ -175,9 +187,9 @@
         </div>
     </section>
 
-    <section class="sec-4 pt-3 pb-5">
+    <section class="sec-4 pt-4 pt-lg-3 pb-5">
         <div class="container">
-            <div class="row row-cols-4 g-4">
+            <div class="row row-cols-2 row-cols-lg-4 g-4">
                 <div>
                     <div class="offer">
                         <img src="imgs/offer1.png" alt="Упаковка">
@@ -281,11 +293,11 @@
 
     <section class="sec-6 py-5">
         <div class="container">
-            <p class="fs-18 fw-bold text-center text-uppercase mb-4">наши кейсы</p>
+            <p class="fs-18 fw-8 text-center text-uppercase mb-4">наши кейсы</p>
             <div class="swiper swiperMain">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-lg-2">
                             <div>
                                 <div class="swiper swiperMini">
                                     <div class="swiper-wrapper">
@@ -310,7 +322,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-lg-2">
                             <div>
                                 <div class="swiper swiperMini">
                                     <div class="swiper-wrapper">
@@ -338,7 +350,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="row row-cols-2">
+                        <div class="row row-cols-lg-2">
                             <div>
                                 <div class="swiper swiperMini">
                                     <div class="swiper-wrapper">
@@ -376,14 +388,57 @@
 
     <section class="sec-7 py-5">
         <div class="container">
-            <p class="fs-18 fw-bold text-center text-uppercase mb-4">наш склад</p>
+            <p class="fs-18 fw-8 text-center text-uppercase mb-4">наш склад</p>
+
+            <div class="row g-3 g-lg-4">
+                <div class="col-md-6">
+                    <a data-fslightbox="sklad" href="imgs/img-8.jpg">
+                        <img src="imgs/img-8.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a data-fslightbox="sklad" href="imgs/img-9.jpg">
+                        <img src="imgs/img-9.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-3 col-md">
+                    <a data-fslightbox="sklad" href="imgs/img-10.jpg">
+                        <img src="imgs/img-10.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-9 col-md-7">
+                    <a data-fslightbox="sklad" href="imgs/img-11.jpg">
+                        <img src="imgs/img-11.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-3 col-md">
+                    <a data-fslightbox="sklad" href="imgs/img-12.jpg">
+                        <img src="imgs/img-12.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-9 col-md-6">
+                    <a data-fslightbox="sklad" href="imgs/img-13.jpg">
+                        <img src="imgs/img-13.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-3 col-md-2">
+                    <a data-fslightbox="sklad" href="imgs/img-14.jpg">
+                        <img src="imgs/img-14.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+                <div class="col-9 col-md-4">
+                    <a data-fslightbox="sklad" href="imgs/img-15.jpg">
+                        <img src="imgs/img-15.jpg" alt="sklad" class="sklad">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="sec-8">
         <div class="container">
-            <p class="fs-18 fw-bold text-center text-uppercase mb-4">этапы работы</p>
-            <ol class="list-unstyled row row-cols-3 gx-4 gy-5">
+            <p class="fs-18 fw-8 text-center text-uppercase mb-4">этапы работы</p>
+            <ol class="list-unstyled row row-cols-md-2 row-cols-lg-3 gx-4 gy-5">
                 <li>
                     <div class="flex-1">
                         <p class="fs-11">Обработка заявки</p>
@@ -427,35 +482,146 @@
     <section class="sec-9 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-lg-7">
                     <div class="box">
-                        <p class="fs-18 fw-bold text-center text-uppercase mb-4">начать сотрудничество</p>
+                        <p class="fs-18 fw-bold text-uppercase mb-4">начать сотрудничество</p>
                         <form action="">
-                            <input type="email" placeholder="Введите ваш email">
-                            <input type="text" placeholder="Введите ваше имя">
-                            <input type="tel" placeholder="+7 (999)-999-99-99">
-                            <button type="submit" class="btn btn-primary">Начать сотрудничество</button>
-                            <p>При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
+                            <input type="email" class="form-control mb-4" placeholder="Введите ваш email">
+                            <input type="text" class="form-control mb-4" placeholder="Введите ваше имя">
+                            <input type="tel" class="form-control mb-4" placeholder="+7 (999)-999-99-99">
+                            <div class="d-md-flex align-items-center">
+                                <button type="submit" class="btn btn-primary rad-sm py-3">Начать сотрудничество</button>
+                                <p class="gray fs-08 flex-1 mt-3 mt-md-0 ms-md-4">При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
+                            </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-5">
-                    <img src="imgs/img0.png" alt="сотрудничество" class="img-fluid">
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <img src="imgs/img0.png" alt="сотрудничество">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5">
+    <section id="price" class="sec-10 py-5 mb-4">
         <div class="container">
-            <p class="fs-18 fw-bold text-start text-uppercase mb-4">Задайте вопросы</p>
+            <p class="fs-18 fw-8 text-center text-uppercase mb-2">стоимость услуг</p>
+            <p class="gray text-center mb-4">Тарифы на услуги фулфилмента</p>
+            <div class="row row-cols-lg-2 gx-lg-5 mb-5">
+                <div>
+                    <ul>
+                        <li>
+                            <div>Приемка</div>
+                            <div>3₽</div>
+                        </li>
+                        <li>
+                            <div>Маркировка</div>
+                            <div>5₽</div>
+                        </li>
+                        <li>
+                            <div>Проверка на брак</div>
+                            <div>от 5₽</div>
+                        </li>
+                        <li>
+                            <div>ВПП</div>
+                            <div>от 9₽</div>
+                        </li>
+                        <li>
+                            <div>ZIP-Lock</div>
+                            <div>от 8₽</div>
+                        </li>
+                        <li>
+                            <div>Курьерский пакет</div>
+                            <div>от 9₽</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <div>Отпаривание</div>
+                            <div>от 30₽</div>
+                        </li>
+                        <li>
+                            <div>Короб 60х40х40</div>
+                            <div>120₽</div>
+                        </li>
+                        <li>
+                            <div>Замер товара</div>
+                            <div>от 100₽</div>
+                        </li>
+                        <li>
+                            <div>Инфографика</div>
+                            <div>от 500₽</div>
+                        </li>
+                        <li>
+                            <div>Отгрузка</div>
+                            <div>от 450₽</div>
+                        </li>
+                        <li>
+                            <div>Забор товара</div>
+                            <div>от 1 200₽</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a class="btn btn-primary rad-sm mx-auto" href="https://docviewer.yandex.ru/view/1939758272/?*=ecRQ%2BqjlROAA6mBUfEccRKUCjSh7InVybCI6InlhLWRpc2stcHVibGljOi8vQndBZTc1dVVRR1U2K05GNmUwQnlobFFOSWdiY2F1TEp6Qlhla04xOWdMUEx1SzhhTXkyYXV4MHMyNzRUenA5ZHEvSjZicG1SeU9Kb25UM1ZvWG5EYWc9PSIsInRpdGxlIjoiRnVsbHBvdG9rINCf0YDQsNC50YEgLnBkZiIsIm5vaWZyYW1lIjpmYWxzZSwidWlkIjoiMTkzOTc1ODI3MiIsInRzIjoxNzEzODk2MjU4NTQ5LCJ5dSI6IjYzOTIzMjgxODE3MTM0NTUwOTcifQ%3D%3D" target="_blank" rel="noopener">Скачать полный прайс</a>
+        </div>
+    </section>
+
+    <section id="callback" class="sec-11">
+        <div class="container">
+            <p class="fs-18 fw-8 text-center text-uppercase mb-2">ВОЗНИКЛИ ВОПРОСЫ?</p>
+            <p class="gray text-center fs-11 mb-5">Наш менеджер оперативно с вами свяжется</p>
+            <form action="" class="row row-cols-lg-3 g-3 g-lg-5 mb-4">
+                <div>
+                    <input type="text" class="form-control p-4" placeholder="Введите ваше имя">
+                </div>
+                <div>
+                    <input type="tel" class="form-control p-4" placeholder="+7 (999)-999-99-99">
+                </div>
+                <div>
+                    <button class="btn-secondary rad-sm fs-11 p-4 w-100">Отправить заявку</button>
+                </div>
+            </form>
+            <p class="gray text-center fs-09">При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
+        </div>
+    </section>
+
+    <section class="sec-12 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <form action="">
+                        <p class="fs-18 fw-bold text-center text-uppercase mb-2">РАССЧИТАТЬ ЗАКАЗ</p>
+                        <input type="text" class="form-control mb-4" placeholder="Введите ваше ФИО">
+                        <input type="tel" class="form-control mb-4" placeholder="+7 (999)-999-99-99">
+                        <input type="email" class="form-control mb-4" placeholder="Введите ваш email">
+                        <input type="text" class="form-control mb-4" placeholder="Наименование товара">
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" class="px-4 py-2 fs-12">–</button>
+                            <input type="number" class="form-control count" placeholder="Кол-во">
+                            <button type="button" class="px-4 py-2 fs-12">+</button>
+                        </div>
+                        <input type="text" class="form-control mb-4" placeholder="Техническое задание">
+                        <button type="submit" class="btn-primary mx-auto">Начать сотрудничество</button>
+                        <p class="gray text-center fs-08 mt-4">При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="py-5">
+        <div class="container">
+            <p class="fs-18 fw-bold text-start text-uppercase mb-2">Задайте вопросы</p>
             <p class="gray mb-4">по телефону или в мессенджерах</p>
-            <div class="row mb-4">
-                <div class="col-7">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-7">
                     <p class="fs-08 gray">адрес склада</p>
                     <p class="fs-12">МО, Ленинский городской округ, Деревня Картино, вл4с1</p>
                 </div>
-                <div class="col-5">
+                <div class="col-lg-5">
                     <p class="fs-08 gray">номер телефона</p>
                     <ul class="list-unstyled d-flex">
                         <li>
@@ -496,7 +662,9 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="js/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/fslightbox.js"></script>
 </body>
 </html>

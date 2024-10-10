@@ -1,5 +1,3 @@
-// @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
-
 :root {
     --h-height: 100px;
     --f-height: 100px;
@@ -18,19 +16,23 @@
     --main-font: 'SF Pro Display';
     --transition: 250ms ease-in;
     --radius: 10px;
+    --radius-sm: 5px;
 
-    --bs-btn-active-bg: #D9D9D9;
+    --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: #D9D9D9;
-    --bs-border-radius: 2em;
+    --bs-border-radius: 0px;
     --bs-border-color: #D9D9D9;
 
-    @media (max-width: 767px) {
-        --font-size: 14px;
+    @media (max-width: 1199px) {
+        --font-size: 16px;
     }
     @media (max-width: 575px) {
-        --font-size: 12px;
-        --f-height: 50px;
+        --h-height: 80px;
     }
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--h-height);
 }
 
 /* mixins */
@@ -79,6 +81,12 @@ a {
         padding: 5px 20px;
         border-radius: 5px;
     }
+    @media (max-width: 991px) {
+        font-size: 35px;
+    }
+    @media (max-width: 575px) {
+        font-size: 28px;
+    }
 }
 
 .flex-1 {flex:1;}
@@ -125,6 +133,26 @@ button {
     }
 }
 
+.form-control, .form-select {
+    --bs-body-bg: transparent;
+    --bs-border-color: #D9D9D9;
+    padding: .75em 0em;
+    line-height: 140%;
+    font-size: 1em;
+    border-width: 0px 0px 1px 0px;
+    &:focus {
+        border-color: var(--light-color);
+    }
+    &::placeholder {
+        color: var(--gray);
+    }
+    &::file-selector-button {
+        background-color: var(--bg-color);
+        padding: .7em 1em 0.7em 1em;
+        margin: -.7em 1em -0.7em -1em;
+    }
+}
+
 .fs {
     &-075 {font-size: 0.75em;}
     &-08 {font-size: 0.8em;}
@@ -143,7 +171,11 @@ button {
     &-20 {font-size: 2em;}
     &-25 {font-size: 2.5em;}
 }
+.fw {
+    &-8 {font-weight: 800;}
+}
 .gray {color: var(--gray);}
+.rad-sm {border-radius: var(--radius-sm);}
 
 
 @media (min-width: 1400px) {
@@ -185,13 +217,38 @@ header {
             @include list();
             @include flex(row, flex-start, center, nowrap);
             &.menu {
+                @media (max-width: 991px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
                 li {
+                    @media (max-width: 991px) {
+                        width: 100%;
+                    }
                     &:not(:first-child) {
                         margin-left: 2em;
+                        @media (max-width: 1199px) {
+                            margin-left: 1em;
+                        }
+                        @media (max-width: 991px) {
+                            margin-left: 0em;
+                            margin-top: 1em;
+                        }
                     }
                 }
             }
             
+        }
+    }
+    &.sticky {
+        position: fixed;
+        background-color: var(--bg-color);
+        color: var(--font-color);
+        border-bottom: 1px solid var(--bs-border-color);
+        @media (max-width: 991px) {
+            background-color: var(--font-color);
+            color: var(--bg-color);
+            border-bottom: none;
         }
     }
 }
@@ -205,6 +262,18 @@ header {
     color: var(--bg-color);
     @include flex(column, center, stretch, nowrap);
     text-align: center;
+    padding-top: calc(var(--h-height) + 3em);
+    padding-bottom: 3em;
+    @media (max-width: 767px) {
+        img {
+            width: 220px;
+        }
+    }
+    @media (max-width: 767px) {
+        img {
+            width: 150px;
+        }
+    }
 }
 
 .sec-3 {
@@ -212,6 +281,10 @@ header {
     background-size: cover;
     color: var(--bg-color);
     padding: 4em 0em 5em;
+    @media (max-width: 991px) {
+        background-size: auto 140%;
+        padding: 3em 0em;
+    }
 }
 
 .icon-box {
@@ -246,15 +319,21 @@ header {
         bottom: 0px;
         left: 0px;
         width: 100%;
-        height: 50%;
+        height: 45%;
         padding: 1em;
     }
 }
 
 
 .swiperMain {
+    @media (max-width: 991px) {
+        padding-bottom: 2.5em;
+    }
     .swiper-slide {
         padding: 0em 5em;
+        @media (max-width: 991px) {
+            padding: 0px;
+        }
     }
     .swiper-btn-prev {
         position: absolute;
@@ -266,6 +345,19 @@ header {
         img {
             width: 100%;
         }
+        @media (max-width: 991px) {
+            top: 475px;
+            width: 40px;
+            left: unset;
+            right: 55px;
+            transform: unset;
+        }
+        @media (max-width: 767px) {
+            top: 375px;
+        }
+        @media (max-width: 575px) {
+            top: calc(65vw + 25px);
+        }
     }
     .swiper-btn-next {
         position: absolute;
@@ -274,6 +366,17 @@ header {
         z-index: 10;
         width: 60px;
         transform: translateY(-50%);
+        @media (max-width: 991px) {
+            top: 475px;
+            width: 40px;
+            transform: unset;
+        }
+        @media (max-width: 767px) {
+            top: 375px;
+        }
+        @media (max-width: 575px) {
+            top: calc(65vw + 25px);
+        }
         img {
             width: 100%;
         }
@@ -282,6 +385,10 @@ header {
         left: 51%;
         width: 50%;
         text-align: left;
+        @media (max-width: 991px) {
+            left: 0%;
+            bottom: 0%;
+        }
         &-bullet {
             background-color: var(--secondary-1);
             opacity: .3;
@@ -297,11 +404,28 @@ header {
 
 .swiperMini {
     position: relative;
+    @media (max-width: 991px) {
+        margin-bottom: 1.5em;
+    }
     .swiper-slide {
         padding: 0em !important;
         img {
             width: 100%;
+            height: 330px;
+            object-fit: cover;
             border-radius: var(--radius);
+            @media (max-width: 1199px) {
+                height: 280px;
+            }
+            @media (max-width: 991px) {
+                height: 450px;
+            }
+            @media (max-width: 767px) {
+                height: 350px;
+            }
+            @media (max-width: 575px) {
+                height: 65vw;
+            }
         }
     }
     .swiper-button-prev, .swiper-button-next {
@@ -315,6 +439,20 @@ header {
             line-height: .8em;
             color: var(--bg-color);
         }
+    }
+}
+
+
+.sklad {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    @media (max-width: 1199px) {
+        height: 265px;
+    }
+    @media (max-width: 991px) {
+        height: 200px;
     }
 }
 
@@ -347,14 +485,71 @@ header {
     }
 }
 
+
 .sec-9 {
     background-color: #f8f8f8;
+    .box {
+        background-color: #fff;
+        border-radius: 1em;
+        padding: 2em;
+        height: 100%;
+        @include flex(column, center, stretch, nowrap);
+    }
+    img {
+        width: 100%;
+        border-radius: 1em;
+    }
+}
+
+
+.sec-10 {
+    ul {
+        @include list();
+        font-size: 1.4em;
+        li {
+            @include flex(row, space-between, center, nowrap);
+            border-bottom: 2px solid var(--bs-border-color);
+            padding: .5em 0em;
+        }
+    }
+}
+
+
+.sec-11 {
+    color: var(--bg-color);
+    background: url(../imgs/bg/Desktop4.jpg) no-repeat center;
+    background-size: 120% 130%;
+    padding: 3em 0em 5em;
+    .form-control {
+        background-color: #fff;
+        border: none;
+        border-radius: var(--radius-sm);
+    }
+}
+
+.sec-12 {
+    background-color: #f8f8f8;
+    form {
+        background-color: #fff;
+        border-radius: 1em;
+        padding: 3em 4em;
+        @media (max-width: 767px) {
+            padding: 2em 3em;
+        }
+        @media (max-width: 575px) {
+            padding: 1.5em;
+        }
+        input.count {
+            width: 100px;
+            text-align: center;
+        }
+    }
 }
 
 
 footer {
     height: var(--f-height);
-    border-top: 1px solid rgba($color: #000000, $alpha: .2);
+    border-top: 2px solid var(--bs-border-color);
     .logo {
         @include flex(row, flex-start, center, nowrap);
         font-size: .88em;
@@ -362,6 +557,34 @@ footer {
         svg {
             width: 60px;
             height: 60px;
+        }
+    }
+}
+
+
+.offcanvas-lg {
+    --bs-offcanvas-bg: var(--font-color);
+    --bs-offcanvas-color: var(--bg-color);
+    --bs-offcanvas-width: 300px;
+    .offcanvas-body {
+        position: relative;
+        z-index: 1;
+        padding: 2em;
+    }
+    .btn-close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+        background: none;
+        @include flex();
+        color: var(--bg-color);
+        padding: 0px;
+        font-size: 2em;
+        opacity: .7;
+        transition: opacity var(--transition);
+        &:hover {
+            opacity: 1;
         }
     }
 }
