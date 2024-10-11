@@ -11,6 +11,7 @@
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
 </head>
 <body>
     <header>
@@ -29,11 +30,16 @@
                     <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasMenu">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"></path></svg>
                     </button>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body d-flex flex-column justify-content-between align-items-start">
                         <ul class="menu">
                             <li><a href="#price">Цены и услуги</a></li>
                             <li><a href="#contacts">Контакты</a></li>
                             <li><a href="#callback">Заказать звонок</a></li>
+                        </ul>
+                        <ul class="d-flex flex-column align-items-start d-lg-none">
+                            <li class="mb-4"><a href="tel:+74993255036" class="fs-11 fw-bold">+7 (499) 325-50-36</a></li>
+                            <li class="mb-2"><a class="btn-info fw-bold" href="https://api.whatsapp.com/send?phone=79119717604">Написать в Whatsapp</a></li>
+                            <li><a class="btn-info fw-bold" href="https://t.me/Andy_dufrainn">Написать в Telegram</a></li>
                         </ul>
                     </div>
                 </div>
@@ -488,7 +494,9 @@
                         <form action="">
                             <input type="email" class="form-control mb-4" placeholder="Введите ваш email">
                             <input type="text" class="form-control mb-4" placeholder="Введите ваше имя">
-                            <input type="tel" class="form-control mb-4" placeholder="+7 (999)-999-99-99">
+                            <div class="mb-4">
+                                <input type="tel" id="phone-1" class="form-control">
+                            </div>
                             <div class="d-md-flex align-items-center">
                                 <button type="submit" class="btn btn-primary rad-sm py-3">Начать сотрудничество</button>
                                 <p class="gray fs-08 flex-1 mt-3 mt-md-0 ms-md-4">При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
@@ -578,7 +586,7 @@
                     <input type="text" class="form-control p-4" placeholder="Введите ваше имя">
                 </div>
                 <div>
-                    <input type="tel" class="form-control p-4" placeholder="+7 (999)-999-99-99">
+                    <input type="tel" id="phone-2" class="form-control p-4 ps-5">
                 </div>
                 <div>
                     <button class="btn-secondary rad-sm fs-11 p-4 w-100">Отправить заявку</button>
@@ -595,7 +603,9 @@
                     <form action="">
                         <p class="fs-18 fw-bold text-center text-uppercase mb-2">РАССЧИТАТЬ ЗАКАЗ</p>
                         <input type="text" class="form-control mb-4" placeholder="Введите ваше ФИО">
-                        <input type="tel" class="form-control mb-4" placeholder="+7 (999)-999-99-99">
+                        <div class="mb-4">
+                            <input type="tel" id="phone-3" class="form-control">
+                        </div>
                         <input type="email" class="form-control mb-4" placeholder="Введите ваш email">
                         <input type="text" class="form-control mb-4" placeholder="Наименование товара">
                         <div class="d-flex align-items-center mb-4">
@@ -666,5 +676,26 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/sliders.js"></script>
     <script src="js/fslightbox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+    <script>
+        const input1 = document.querySelector("#phone-1");
+        window.intlTelInput(input1, {
+            initialCountry: "ru",
+            nationalMode: true,
+            loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"
+        });
+        const input2 = document.querySelector("#phone-2");
+        window.intlTelInput(input2, {
+            initialCountry: "ru",
+            nationalMode: true,
+            loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"
+        });
+        const input3 = document.querySelector("#phone-3");
+        window.intlTelInput(input3, {
+            initialCountry: "ru",
+            nationalMode: true,
+            loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"
+        });
+    </script>
 </body>
 </html>
