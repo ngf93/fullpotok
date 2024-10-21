@@ -84,7 +84,7 @@
                 </li>
             </ul>
             <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
-                <button type="button" class="btn btn-secondary fs-11">-15% на первый заказ</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-secondary fs-11">-15% на первый заказ</button>
                 <button type="button" class="btn btn-primary fs-11 mt-4 mt-sm-0 ms-sm-4 ms-lg-5">Прайс</button>
             </div>
         </div>
@@ -670,6 +670,28 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 17 17" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g></g><path d="M9.207 8.5l6.646 6.646-0.707 0.707-6.646-6.646-6.646 6.646-0.707-0.707 6.646-6.646-6.647-6.646 0.707-0.707 6.647 6.646 6.646-6.646 0.707 0.707-6.646 6.646z"></path></svg>
+            </button>
+            <div class="modal-body">
+                <p class="fs-16 fw-bold text-center text-uppercase mb-2">Оформить первый заказ со скидкой 15%</p>
+                <p class="gray fs-08 text-center mb-4">Оставьте Ваши контактные данные, наш оператор свяжется с Вами в ближайшее время</p>
+                <form action="">
+                    <input type="text" class="form-control mb-4" placeholder="Введите ваше имя">
+                    <div class="mb-4">
+                        <input type="tel" id="phone-4" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary rad-sm py-3 w-100">Отправить заявку</button>
+                    <p class="gray fs-08 text-center mt-4">При нажатии кнопки, вы соглашаетесь с политикой обработкой персональных данных</p>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="js/header.js"></script>
@@ -692,6 +714,12 @@
         });
         const input3 = document.querySelector("#phone-3");
         window.intlTelInput(input3, {
+            initialCountry: "ru",
+            nationalMode: true,
+            loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"
+        });
+        const input4 = document.querySelector("#phone-4");
+        window.intlTelInput(input4, {
             initialCountry: "ru",
             nationalMode: true,
             loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"

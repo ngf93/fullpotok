@@ -598,3 +598,31 @@ footer {
         }
     }
 }
+
+
+.modal-content {
+    border-radius: 0px;
+    position: relative;
+    .btn-close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+        background: none;
+        @include flex();
+        color: var(--font-color);
+        padding: .5em;
+        font-size: 1em;
+        opacity: .7;
+        transition: opacity var(--transition);
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .modal-body {
+        padding: 2em;
+        @media (max-width: 575px) {
+            padding: 1.5em;
+        }
+    }
+}

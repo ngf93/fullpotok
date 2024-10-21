@@ -719,4 +719,37 @@ footer .logo svg {
 }
 .offcanvas-lg .btn-close:hover {
   opacity: 1;
+}
+
+.modal-content {
+  border-radius: 0px;
+  position: relative;
+}
+.modal-content .btn-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: var(--font-color);
+  padding: 0.5em;
+  font-size: 1em;
+  opacity: 0.7;
+  transition: opacity var(--transition);
+}
+.modal-content .btn-close:hover {
+  opacity: 1;
+}
+.modal-content .modal-body {
+  padding: 2em;
+}
+@media (max-width: 575px) {
+  .modal-content .modal-body {
+    padding: 1.5em;
+  }
 }/*# sourceMappingURL=style.css.map */
